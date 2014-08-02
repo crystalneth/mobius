@@ -3,6 +3,9 @@ module Mobius
     ACTIONS = {
         :prepare_form => {
           :path => '/api/v2/three-step'
+        },
+        :complete_form => {
+          :path => '/api/v2/three-step'
         }
       } 
 

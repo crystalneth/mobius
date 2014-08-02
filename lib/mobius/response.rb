@@ -1,3 +1,5 @@
+require 'hashie'
+
 module Mobius
   class Response
     def initialize response
@@ -5,11 +7,24 @@ module Mobius
     end
 
     def success?
-      data.response_.result_code == '100'
+      data.result_code == '100'
     end
 
     def data
-      @data ||= Hashie::Mash.new(@response.body)
+      @data ||= Hashie::Mash.new(@response.body['response'])
     end
+
+    # ## COMMON STUFF
+    # def result_code
+    #   data.response_.result_code
+    # end
+
+    # def result
+    #   data.response_.result
+    # end
+
+    # def result_text
+    #   data.response_.result_text
+    # end
   end
 end
