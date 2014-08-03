@@ -29,6 +29,8 @@ module Mobius
         raise "no root"
       end
       xml = data[root].to_xml(:root => root)
+      # Lovely hack to remove products tag and allow {products: [...]} format without me having to write an xml builder
+      xml = xml.sub("<products type=\"array\">\n", '').sub("</products>\n", '')
       puts "REQUEST:\n" + xml
       xml
     end

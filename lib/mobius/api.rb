@@ -6,6 +6,9 @@ module Mobius
         },
         :complete_form => {
           :path => '/api/v2/three-step'
+        },
+        :transact => {
+          :path => '/api/v2/three-step'
         }
       } 
 
