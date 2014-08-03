@@ -2,11 +2,11 @@ require 'faraday'
 require 'active_support/core_ext/hash'
 
 module Mobius
-  # Request middleware that encodes the body as JSON.
+  # Request middleware that encodes the body as XML.
   #
   # Processes only requests with matching Content-type or those without a type.
   # If a request doesn't have a type but has a body, it sets the Content-type
-  # to JSON MIME-type.
+  # to XML MIME-type.
   #
   # Doesn't try to encode bodies that already are in string form.
   class FaradayXmlRequest < Faraday::Middleware
