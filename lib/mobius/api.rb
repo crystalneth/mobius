@@ -18,7 +18,12 @@ module Mobius
     end
 
     def connection
-      @connection ||= Connection.new
+      @connection ||= Connection.new(@secret_key, @key_id)
+    end
+
+    def initialize secret_key=nil, key_id=nil
+      @secret_key = secret_key || ENV['MOBIUS_SECRET_KEY'] 
+      @key_id = key_id || ENV['MOBIUS_KEY_ID'] 
     end
   end
 end

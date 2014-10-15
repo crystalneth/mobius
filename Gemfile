@@ -22,6 +22,6 @@ gem 'multi_xml'
 gem 'hashie'
 
 group :development do
-  gem 'pry-debugger'
+  gem 'pry-byebug'
   gem 'pry-stack_explorer'
 end

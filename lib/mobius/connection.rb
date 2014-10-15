@@ -3,12 +3,11 @@ require 'faraday_middleware'
 
 module Mobius
   class Connection
-    def key_id
-      '4683383'
-    end
+    attr_accessor :secret_key, :key_id
 
-    def secret_key
-      '99zt3kvW3T683Z82zfptQ5zPChW57uxn'
+    def initialize secret_key, key_id=nil
+      self.secret_key = secret_key
+      self.key_id = nil
     end
 
     def endpoint
