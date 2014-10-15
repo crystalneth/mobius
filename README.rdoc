@@ -1,3 +1,9 @@
 = Mobius
 
 This project rocks and uses MIT-LICENSE.
+
+= Usage
+
+```ruby
+Mobius::API.new
+```
