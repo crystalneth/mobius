@@ -2,8 +2,20 @@
 
 This project rocks and uses MIT-LICENSE.
 
+This is a simple, stateless, "dumb" library for interacting with Mobius Payments.
+
 = Usage
 
-```ruby
-Mobius::API.new
-```
+    mobius = Mobius::API.new
+
+    result = mobius.do :prepare_form, mobius_params
+    
+    if result.success?
+      render 'payment_form', locals: {mobius_form: result}
+    end
+    
+    result = mobius.do :complete_form, complete_action: { token_id: token_id }
+    
+    result = mobius.do :transact, sale: sale_params
+    
+See Mobius API documentation for parameter and further details. This 
