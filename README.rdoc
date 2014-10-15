@@ -6,7 +6,7 @@ This is a simple, stateless, "dumb" library for interacting with Mobius Payments
 
 = Usage
 
-    mobius = Mobius::API.new
+    mobius = Mobius::API.new key_id, secret_key
 
     result = mobius.do :prepare_form, mobius_params
     
